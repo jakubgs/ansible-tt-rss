@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: Jakub Sokołowski <jakub@gsokolowski.pl>
+  description: Configure TT-RSS using Docker and PostgreSQL
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+    - name: Ubuntu
+    - name: Debian
