@@ -1,0 +1,29 @@
+---
+- name: TT-RSS | Create directory for DB data
+  file:
+    path: '{{ tt_rss_db_cont_dir }}/data'
+    state: directory
+    owner: '{{ tt_rss_db_cont_uid | string }}'
+    group: docker
+    recurse: true
+
+- name: TT-RSS | Create database container
+  docker_container:
+    name: '{{ tt_rss_db_cont_name }}'
+    image: '{{ tt_rss_db_cont_img }}'
+    pull: true
+    state: '{{ cont_state }}'
+    recreate: '{{ cont_recreate }}'
+    restart: '{{ cont_restart }}'
+    restart_policy: '{{ cont_restart_policy }}'
+    env:
+      POSTGRES_DB:       '{{ tt_rss_db_name | mandatory }}'
+      POSTGRES_USER:     '{{ tt_rss_db_user | mandatory }}'
+      POSTGRES_PASSWORD: '{{ tt_rss_db_pass | mandatory }}'
+    ports:
+      - '{{ tt_rss_db_cont_port }}:{{ tt_rss_db_cont_port }}'
+    tmpfs:
+      - '/run/postgresql:size=512K'
+      - '/tmp:size=256K'
+    volumes:
+      - '{{ tt_rss_db_cont_dir }}/data:/var/lib/postgresql/data'

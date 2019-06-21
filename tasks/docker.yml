@@ -1,0 +1,8 @@
+---
+- name: TT-RSS | Install docker-engine
+  apt:
+    name: docker.io
+
+- name: TT-RSS | Install docker python module
+  apt:
+    name: python-docker

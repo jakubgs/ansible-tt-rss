@@ -1,0 +1,28 @@
+---
+tt_rss_cont_tag: 'amd64-19.2-ls21'
+tt_rss_cont_img: 'linuxserver/tt-rss:{{ tt_rss_cont_tag }}'
+tt_rss_cont_name: 'tt-rss-app'
+tt_rss_cont_dir: '/docker/{{ tt_rss_cont_name }}'
+tt_rss_cont_uid: 1000
+tt_rss_cont_port: 80
+tt_rss_host_port: 8080
+# you might have to change this if you use a proxy
+tt_rss_public_url: 'http://localhost:{{ tt_rss_host_port }}/'
+
+# PostgreSQL database
+tt_rss_db_cont_tag: '9.6-alpine'
+tt_rss_db_cont_img: 'postgres:{{ tt_rss_db_cont_tag }}'
+tt_rss_db_cont_name: 'tt-rss-db'
+tt_rss_db_cont_uid: 70
+tt_rss_db_cont_port: 5432
+tt_rss_db_cont_dir: '/docker/{{ tt_rss_db_cont_name }}'
+
+tt_rss_db_name: tt-rss
+tt_rss_db_user: ~
+tt_rss_db_pass: ~
+
+# Generic container options
+cont_state: started
+cont_recreate: false
+cont_restart: false
+cont_restart_policy: unless-stopped
