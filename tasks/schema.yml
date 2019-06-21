@@ -1,7 +1,7 @@
 ---
 - name: TT_RSS | Instal postgresql-client
   shell: |
-    docker exec -t {{ tt_rss_cont_name }} apk add postgresql-client
+    docker exec -t {{ tt_rss_cont_name }} apk add --no-cache postgresql-client
 
 - name: TT_RSS | Create the database schema
   shell: |
