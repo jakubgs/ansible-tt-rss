@@ -2,3 +2,4 @@
 - import_tasks: docker.yml
 - import_tasks: database.yml
 - import_tasks: container.yml
+- import_tasks: schema.yml

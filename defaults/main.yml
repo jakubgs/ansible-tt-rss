@@ -17,7 +17,7 @@ tt_rss_db_cont_uid: 70
 tt_rss_db_cont_port: 5432
 tt_rss_db_cont_dir: '/docker/{{ tt_rss_db_cont_name }}'
 
-tt_rss_db_name: tt-rss
+tt_rss_db_name: ttrss
 tt_rss_db_user: ~
 tt_rss_db_pass: ~
 

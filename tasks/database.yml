@@ -5,7 +5,6 @@
     state: directory
     owner: '{{ tt_rss_db_cont_uid | string }}'
     group: docker
-    recurse: true
 
 - name: TT-RSS | Create database container
   docker_container:

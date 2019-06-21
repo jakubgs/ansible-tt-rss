@@ -1,0 +1,10 @@
+---
+- name: TT_RSS | Instal postgresql-client
+  shell: |
+    docker exec -t {{ tt_rss_cont_name }} apk add postgresql-client
+
+- name: TT_RSS | Create the database schema
+  shell: |
+    docker exec -t {{ tt_rss_cont_name }} bash -c \
+      "cat /var/www/html/schema/ttrss_schema_pgsql.sql | 
+      psql -h db -U {{ tt_rss_db_user }} {{ tt_rss_db_name }}"
