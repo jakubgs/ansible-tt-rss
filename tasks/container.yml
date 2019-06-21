@@ -29,7 +29,7 @@
       # public url
       SELF_URL_PATH: '{{ tt_rss_public_url }}'
       # database
-      DB_TYPE: 'postgres'
+      DB_TYPE: 'pgsql'
       DB_HOST: 'db'
       DB_PORT: '{{ tt_rss_db_cont_port | string }}'
       DB_NAME: '{{ tt_rss_db_name | mandatory }}'
