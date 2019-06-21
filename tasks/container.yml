@@ -34,3 +34,5 @@
       DB_NAME: '{{ tt_rss_db_name | mandatory }}'
       DB_USER: '{{ tt_rss_db_user | mandatory }}'
       DB_PASS: '{{ tt_rss_db_pass | mandatory }}'
+      # single user
+      SINGLE_USER_MODE: 'true'
